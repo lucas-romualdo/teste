@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import './App.css'; 
+
+// Os componentes estão na subpasta 'components', então é './components/'
+import LandingPage from './components/LandingPage';
+import PoliticaDePrivacidade from './components/PoliticaDePrivacidade';
+import TermosDeUso from './components/TermosDeUso';
+import Footer from './components/Footer';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/politica-de-privacidade" element={<PoliticaDePrivacidade />} />
+        <Route path="/termos-de-uso" element={<TermosDeUso />} />
+      </Routes>
+      <Footer />
     </div>
   );
 }
 
-export default App;
+export default App; // <-- Esta é a linha que provavelmente estava faltando ou incorreta.
