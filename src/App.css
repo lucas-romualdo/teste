@@ -197,68 +197,83 @@ table th {
   margin-top: 2rem;
 }
 
-/* Estilos para o Bloco 3 */
+/* --- ESTILOS COMPLETOS E CORRIGIDOS PARA O BLOCO 3 --- */
+
 #bloco3 .container {
-  max-width: 800px;
+    max-width: 1000px;
 }
 
 #bloco3 h2 {
-  color: #FFFFFF;
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
+    text-align: center;
+    color: #FFFFFF;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
 }
 
-#bloco3>.container>p {
-  color: #CCCCCC;
-  font-size: 1.1rem;
-  margin-bottom: 3rem;
+#bloco3 > .container > p {
+    text-align: center;
+    color: #CCCCCC;
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
 }
 
-.audience-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  /* Uma coluna por padrão */
-  gap: 2.5rem;
-  /* Espaço entre os itens */
-  text-align: left;
+/* --- AJUSTES NO CARD DO CARROSSEL --- */
+
+/* Wrapper que o react-slick cria para cada slide */
+.slick-slide > div {
+    padding: 0 10px;
+}
+
+.audience-item {
+    background-color: #1E1E1E;
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 1.5rem;
+    
+    /* --- CORREÇÃO APLICADA AQUI --- */
+    height: 100%; /* Faz o card ocupar toda a altura disponível no slide */
+    min-height: 250px; /* Garante uma altura mínima, mas permite crescer */
+    /* REMOVIDO: height: 280px; */
+    
+    display: flex !important;
+    flex-direction: column;
+    text-align: center;
 }
 
 .audience-item h3 {
-  display: flex;
-  align-items: center;
-  font-size: 1.3rem;
-  color: #FFA500;
-  /* Cor laranja para o título */
-  margin-bottom: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.3rem;
+    color: #FFA500;
+    margin-bottom: 1rem;
+    line-height: 1.3; /* Melhora o espaçamento do título se ele quebrar a linha */
 }
 
 .audience-item .icon {
-  font-size: 1.5rem;
-  margin-right: 10px;
+    font-size: 2.5rem;
+    margin-bottom: 15px;
 }
 
 .audience-item p {
-  font-size: 1rem;
-  color: #CCCCCC;
-  line-height: 1.5;
-  padding-left: 35px;
-  /* Alinha a descrição com o texto do título */
+    font-size: 1rem;
+    color: #CCCCCC;
+    line-height: 1.5;
+    margin-top: auto; /* Empurra a descrição para a parte inferior, ajudando no alinhamento */
 }
 
-/* Estilo para o texto de conclusão */
+/* Texto de conclusão */
 .conclusion-text {
-  margin-top: 3rem;
-  padding-top: 2rem;
-  border-top: 1px solid #444;
-  /* Linha divisória */
-  font-size: 1.1rem;
-  color: #FFFFFF;
-  line-height: 1.7;
+    margin-top: 5rem;
+    padding-top: 2rem;
+    border-top: 1px solid #444;
+    font-size: 1.1rem;
+    color: #FFFFFF;
+    line-height: 1.7;
+    text-align: center;
 }
-
 .conclusion-text strong {
-  color: #FFA500;
-  /* Destaque em laranja */
+    color: #FFA500;
 }
 
 /* Estilos para o Bloco 4 */
@@ -675,9 +690,6 @@ table th {
   font-size: 0.9rem;
   text-align: center;
 }
-
-/* A classe .active não é mais necessária com o fundo sólido, então foi removida. */
-
 /* --- FIM DOS AJUSTES --- */
 
 
@@ -719,96 +731,108 @@ table th {
 /* --- ESTILOS COMPLETOS PARA O BLOCO 9 (COM AJUSTES FINAIS) --- */
 
 #bloco9 {
-    padding: 60px 20px;
+  padding: 60px 20px;
 }
 
 #bloco9 .container {
-    max-width: 960px;
+  max-width: 960px;
 }
 
 /* Cabeçalho com Selo */
 .bloco9-header {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-    margin-bottom: 2rem;
-    text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  text-align: left;
 }
+
 .header-selo img {
-    width: 150px;
-    height: auto;
+  width: 150px;
+  height: auto;
 }
+
 .header-texto h2 {
-    font-size: 2rem;
-    color: #FFFFFF;
+  font-size: 2rem;
+  color: #FFFFFF;
 }
+
 .header-texto h2 strong {
-    color: #FFA500;
+  color: #FFA500;
 }
+
 .header-texto p {
-    font-size: 1.1rem;
-    color: #CCCCCC;
-    margin: 0.5rem 0;
+  font-size: 1.1rem;
+  color: #CCCCCC;
+  margin: 0.5rem 0;
 }
+
 #bloco9 .subtitulo-teoria {
-    text-align: left;
-    margin-top: 2rem;
-    font-size: 1.3rem;
-    color: #FFFFFF;
+  text-align: left;
+  margin-top: 2rem;
+  font-size: 1.3rem;
+  color: #FFFFFF;
 }
 
 /* Depoimento em Destaque (Rogério) */
 .depoimento-destaque-layout {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    align-items: center;
-    margin-top: 3rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+  margin-top: 3rem;
 }
+
 .destaque-imagem-col img {
-    width: 100%;
-    border-radius: 8px;
+  width: 100%;
+  border-radius: 8px;
 }
+
 .destaque-texto-col {
-    background-color: #f0f0f0;
-    padding: 2rem;
-    border-radius: 5px;
-    text-align: left;
-    color: #333;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+  background-color: #f0f0f0;
+  padding: 2rem;
+  border-radius: 5px;
+  text-align: left;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
+
 .btn-ouvir-depoimento {
-    background-color: rgba(0, 0, 0, 0.8);
-    border: 1px solid #ddd;
-    border-radius: 20px;
-    padding: 5px 10px;
-    color: #fff;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    font-size: 0.8rem;
-    margin-bottom: 1.5rem;
+  background-color: rgba(0, 0, 0, 0.8);
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  padding: 5px 10px;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-size: 0.8rem;
+  margin-bottom: 1.5rem;
 }
+
 .btn-ouvir-depoimento img {
-    width: 16px;
-    margin-right: 8px;
+  width: 16px;
+  margin-right: 8px;
 }
+
 .destaque-texto-col h3 {
-    font-size: 1.5rem;
+  font-size: 1.5rem;
 }
+
 .destaque-texto-col .quote-destaque {
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #D2691E;
-    margin: 0.5rem 0 1.5rem 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #D2691E;
+  margin: 0.5rem 0 1.5rem 0;
 }
+
 .destaque-texto-col p {
-    font-size: 1rem;
-    line-height: 1.6;
-    margin-bottom: 1rem;
-    color: #333;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  color: #333;
 }
 
 /* Frase "Cada sorriso conta..." */
@@ -821,526 +845,568 @@ table th {
 /* --- Estilos para os Flip Cards de Depoimento (VERSÃO COM AJUSTES FINAIS) --- */
 
 .depoimentos-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-    max-width: 900px;
-    margin: 2rem auto 3rem auto;
-    perspective: 1000px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  max-width: 900px;
+  margin: 2rem auto 3rem auto;
+  perspective: 1000px;
 }
 
 .flip-card {
-    height: 350px;
-    cursor: pointer;
+  height: 350px;
+  cursor: pointer;
 }
 
 .flip-card-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    transition: transform 0.8s;
-    transform-style: preserve-3d;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
 }
 
 .flip-card-inner.is-flipped {
-    transform: rotateY(180deg);
+  transform: rotateY(180deg);
 }
 
-.flip-card-front, .flip-card-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-    border-radius: 8px;
-    overflow: hidden;
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
 /* --- AJUSTE 2: POSIÇÃO DO BOTÃO --- */
 .flip-card-front {
-    background-color: #1E1E1E;
-    border: 1px solid #333;
-    display: flex;
-    flex-direction: column;
+  background-color: #1E1E1E;
+  border: 1px solid #333;
+  display: flex;
+  flex-direction: column;
 }
 
 .card-frente-imagem {
-    width: 100%;
-    height: 50%;
-    object-fit: cover;
+  width: 100%;
+  height: 50%;
+  object-fit: cover;
 }
 
 .card-frente-conteudo {
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1; /* Faz esta área ocupar todo o espaço restante */
-    text-align: left;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  /* Faz esta área ocupar todo o espaço restante */
+  text-align: left;
 }
 
 .resumo-depoimento {
-    font-weight: bold;
-    color: #FFA500;
-    font-size: 1.1rem;
-    flex-grow: 1; /* Empurra o conteúdo abaixo para o final */
+  font-weight: bold;
+  color: #FFA500;
+  font-size: 1.1rem;
+  flex-grow: 1;
+  /* Empurra o conteúdo abaixo para o final */
 }
 
 .autor-info {
-    margin-bottom: 0.5rem; /* Adiciona um pequeno espaço acima do botão */
+  margin-bottom: 0.5rem;
+  /* Adiciona um pequeno espaço acima do botão */
 }
 
 .autor-info h4 {
-    color: #FFFFFF;
-    margin: 0;
-    font-size: 1.2rem;
+  color: #FFFFFF;
+  margin: 0;
+  font-size: 1.2rem;
 }
 
 .autor-info span {
-    color: #CCCCCC;
-    font-size: 0.9rem;
+  color: #CCCCCC;
+  font-size: 0.9rem;
 }
 
 .btn-ouvir-depoimento-card {
-    display: flex;
-    align-items: center;
-    align-self: flex-end; /* Alinha o botão à direita */
-    font-size: 0.8rem;
-    color: #FFFFFF;
-    padding: 5px; 
-    border-radius: 5px;
-    z-index: 10;
+  display: flex;
+  align-items: center;
+  align-self: flex-end;
+  /* Alinha o botão à direita */
+  font-size: 0.8rem;
+  color: #FFFFFF;
+  padding: 5px;
+  border-radius: 5px;
+  z-index: 10;
 }
+
 .btn-ouvir-depoimento-card:hover {
-    background-color: rgba(255,255,255,0.1);
+  background-color: rgba(255, 255, 255, 0.1);
 }
+
 .btn-ouvir-depoimento-card img {
   width: 16px;
   margin-right: 5px;
 }
+
 /* --- FIM DO AJUSTE 2 --- */
 
 
 /* --- AJUSTE 1: TAMANHO DO VERSO DO CARD --- */
 .flip-card-back {
-    background-color: #1E1E1E;
-    color: white;
-    transform: rotateY(180deg);
-    padding: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start; /* Alinha o conteúdo ao topo */
-    border: 1px solid #333;
+  background-color: #1E1E1E;
+  color: white;
+  transform: rotateY(180deg);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  /* Alinha o conteúdo ao topo */
+  border: 1px solid #333;
 }
 
 .flip-card-back h4 {
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
-    flex-shrink: 0; /* Impede que o título encolha */
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  flex-shrink: 0;
+  /* Impede que o título encolha */
 }
 
 .flip-card-back .depoimento-completo {
-    font-size: 0.9rem;
-    line-height: 1.5;
-    text-align: left;
-    width: 100%;
-    overflow-y: auto; /* Adiciona scroll se o texto for muito grande */
-    flex-grow: 1; /* Faz o parágrafo ocupar o espaço restante */
+  font-size: 0.9rem;
+  line-height: 1.5;
+  text-align: left;
+  width: 100%;
+  overflow-y: auto;
+  /* Adiciona scroll se o texto for muito grande */
+  flex-grow: 1;
+  /* Faz o parágrafo ocupar o espaço restante */
 }
+
 /* --- FIM DO AJUSTE 1 --- */
 
 #bloco9 .cta-button {
-    margin-top: 2rem;
+  margin-top: 2rem;
 }
 
 /* Media Queries para Responsividade */
 @media (max-width: 768px) {
-    .bloco9-header {
-        flex-direction: column;
-        text-align: center;
-    }
-    .depoimento-destaque-layout {
-        grid-template-columns: 1fr;
-    }
-    .depoimentos-grid {
-        grid-template-columns: 1fr;
-    }
+  .bloco9-header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .depoimento-destaque-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .depoimentos-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Estilos para o Bloco 10 */
 #bloco10 {
-    padding: 60px 20px;
-    background-color: #121212; /* Fundo escuro */
+  padding: 60px 20px;
+  background-color: #121212;
+  /* Fundo escuro */
 }
 
 #bloco10 .container {
-    max-width: 960px;
+  max-width: 960px;
 }
 
 /* Layout de 2 colunas */
 .author-section {
-    display: grid;
-    /* Coluna de texto 2x maior que a da imagem */
-    grid-template-columns: 2fr 1fr; 
-    gap: 3rem;
-    align-items: center;
+  display: grid;
+  /* Coluna de texto 2x maior que a da imagem */
+  grid-template-columns: 2fr 1fr;
+  gap: 3rem;
+  align-items: center;
 }
 
 .author-texto {
-    text-align: left;
+  text-align: left;
 }
 
 .author-texto h2 {
-    font-size: 2rem;
-    color: #FFFFFF;
-    line-height: 1.4;
-    margin-bottom: 2rem;
+  font-size: 2rem;
+  color: #FFFFFF;
+  line-height: 1.4;
+  margin-bottom: 2rem;
 }
 
 .author-texto h3 {
-    font-size: 1.5rem;
-    color: #FFFFFF;
-    margin-bottom: 1rem;
+  font-size: 1.5rem;
+  color: #FFFFFF;
+  margin-bottom: 1rem;
 }
 
 .author-texto .cargo-laranja {
-    color: #FFA500; /* Laranja */
+  color: #FFA500;
+  /* Laranja */
 }
 
 .author-texto p {
-    font-size: 1.1rem;
-    color: #CCCCCC;
-    line-height: 1.7;
+  font-size: 1.1rem;
+  color: #CCCCCC;
+  line-height: 1.7;
 }
 
 .author-texto p strong {
-    color: #FFFFFF; /* Destaque do negrito */
+  color: #FFFFFF;
+  /* Destaque do negrito */
 }
 
 .author-imagem img {
-    width: 100%;
-    max-width: 250px;
-    border-radius: 8px;
-    display: block;
-    margin: 0 auto; /* Centraliza a imagem na coluna */
+  width: 100%;
+  max-width: 250px;
+  border-radius: 8px;
+  display: block;
+  margin: 0 auto;
+  /* Centraliza a imagem na coluna */
 }
 
 /* Ajuste para telas menores */
 @media (max-width: 768px) {
-    .author-section {
-        grid-template-columns: 1fr; /* Volta para 1 coluna */
-        text-align: center;
-    }
-    .author-imagem {
-        order: -1; /* Imagem vem primeiro em telas pequenas */
-        margin-bottom: 2rem;
-    }
-    .author-texto {
-        text-align: center;
-    }
+  .author-section {
+    grid-template-columns: 1fr;
+    /* Volta para 1 coluna */
+    text-align: center;
+  }
+
+  .author-imagem {
+    order: -1;
+    /* Imagem vem primeiro em telas pequenas */
+    margin-bottom: 2rem;
+  }
+
+  .author-texto {
+    text-align: center;
+  }
 }
 
 /* Estilos para o Bloco 11 */
 #bloco11 {
-    padding: 60px 20px;
-    text-align: center;
-    background-color: #121212; /* Fundo escuro */
+  padding: 60px 20px;
+  text-align: center;
+  background-color: #121212;
+  /* Fundo escuro */
 }
 
 #bloco11 .container {
-    max-width: 700px;
+  max-width: 700px;
 }
 
 #bloco11 h2 {
-    color: #FFFFFF;
-    font-size: 2.2rem;
-    font-weight: bold;
-    margin-bottom: 2.5rem;
+  color: #FFFFFF;
+  font-size: 2.2rem;
+  font-weight: bold;
+  margin-bottom: 2.5rem;
 }
 
 .oferta-final-box {
-    margin-bottom: 2.5rem;
+  margin-bottom: 2.5rem;
 }
 
 .oferta-final-box h3 {
-    color: #FFA500; /* Laranja */
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-bottom: 1.5rem;
+  color: #FFA500;
+  /* Laranja */
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
 }
 
 .oferta-final-box ul {
-    list-style: none;
-    padding: 0;
-    margin: 0 auto;
-    max-width: 500px; /* Limita a largura da lista */
-    text-align: left;
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 500px;
+  /* Limita a largura da lista */
+  text-align: left;
 }
 
 .oferta-final-box li {
-    display: flex;
-    align-items: center;
-    color: #CCCCCC;
-    font-size: 1.1rem;
-    margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  color: #CCCCCC;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
 }
 
 .oferta-final-box li span {
-    margin-right: 10px;
-    color: #28a745; /* Verde para o checkmark */
+  margin-right: 10px;
+  color: #28a745;
+  /* Verde para o checkmark */
 }
 
 .unidades-limitadas {
-    color: #CCCCCC;
-    font-size: 1rem;
-    margin-top: 2rem;
+  color: #CCCCCC;
+  font-size: 1rem;
+  margin-top: 2rem;
 }
 
 /* Ajuste para o botão com duas linhas de texto */
 .cta-duas-linhas {
-    padding-top: 12px;
-    padding-bottom: 12px;
+  padding-top: 12px;
+  padding-bottom: 12px;
 }
 
 .texto-menor-botao {
-    font-size: 0.9rem; /* Tamanho menor para a segunda linha */
-    font-weight: normal;
+  font-size: 0.9rem;
+  /* Tamanho menor para a segunda linha */
+  font-weight: normal;
 }
 
 
 /* Estilos para o Bloco 12 */
 #bloco12 {
-    padding: 60px 20px;
-    background-color: #121212; /* Fundo escuro */
+  padding: 60px 20px;
+  background-color: #121212;
+  /* Fundo escuro */
 }
 
 #bloco12 .container {
-    max-width: 960px;
+  max-width: 960px;
 }
 
 /* Layout de 2 colunas */
 .ebook-layout {
-    display: grid;
-    grid-template-columns: 1.5fr 1fr; /* Coluna de texto/form maior que a da imagem */
-    gap: 3rem;
-    align-items: center;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  /* Coluna de texto/form maior que a da imagem */
+  gap: 3rem;
+  align-items: center;
 }
 
 .ebook-conteudo {
-    text-align: left;
+  text-align: left;
 }
 
 .ebook-conteudo h2 {
-    font-size: 2rem;
-    color: #FFFFFF;
-    font-weight: bold;
-    line-height: 1.4;
-    margin-bottom: 1.5rem;
+  font-size: 2rem;
+  color: #FFFFFF;
+  font-weight: bold;
+  line-height: 1.4;
+  margin-bottom: 1.5rem;
 }
 
 .ebook-conteudo p {
-    font-size: 1.1rem;
-    color: #CCCCCC;
-    margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+  color: #CCCCCC;
+  margin-bottom: 1.5rem;
 }
 
 /* Lista de benefícios do e-book */
 .lista-ebook {
-    list-style: none;
-    padding: 0;
-    margin-bottom: 2.5rem;
+  list-style: none;
+  padding: 0;
+  margin-bottom: 2.5rem;
 }
 
 .lista-ebook li {
-    display: flex;
-    align-items: center;
-    font-size: 1.1rem;
-    color: #FFFFFF;
-    margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  font-size: 1.1rem;
+  color: #FFFFFF;
+  margin-bottom: 1rem;
 }
 
 .lista-ebook li span {
-    font-size: 1.2rem;
-    margin-right: 10px;
+  font-size: 1.2rem;
+  margin-right: 10px;
 }
 
 /* Formulário */
 .formulario-container h3 {
-    font-weight: bold;
-    color: #FFFFFF;
-    margin-bottom: 1rem;
+  font-weight: bold;
+  color: #FFFFFF;
+  margin-bottom: 1rem;
 }
 
 .formulario-container form label {
-    display: block;
-    color: #CCCCCC;
-    margin-bottom: 0.5rem;
+  display: block;
+  color: #CCCCCC;
+  margin-bottom: 0.5rem;
 }
 
 .formulario-container form input {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 1rem;
-    border-radius: 5px;
-    border: 1px solid #444;
-    background-color: #1E1E1E;
-    color: #FFFFFF;
-    font-size: 1rem;
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+  border: 1px solid #444;
+  background-color: #1E1E1E;
+  color: #FFFFFF;
+  font-size: 1rem;
 }
 
 .formulario-container form button {
-    width: 100%;
-    background-color: #FFA500;
-    color: #121212;
-    padding: 15px;
-    border: none;
-    border-radius: 5px;
-    font-weight: bold;
-    font-size: 1.1rem;
-    cursor: pointer;
-    margin-top: 1rem;
+  width: 100%;
+  background-color: #FFA500;
+  color: #121212;
+  padding: 15px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  cursor: pointer;
+  margin-top: 1rem;
 }
 
 .post-submit-message {
-    font-size: 0.9rem;
-    color: #888888;
-    text-align: center;
-    margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #888888;
+  text-align: center;
+  margin-top: 1rem;
 }
 
 /* Imagem do E-book */
 .ebook-imagem img {
-    width: 100%;
-    max-width: 350px;
-    border-radius: 8px;
+  width: 100%;
+  max-width: 350px;
+  border-radius: 8px;
 }
 
 /* Ajuste para telas menores */
 @media (max-width: 768px) {
-    .ebook-layout {
-        grid-template-columns: 1fr; /* Volta para 1 coluna */
-    }
-    .ebook-imagem {
-        order: -1; /* Imagem vem primeiro em telas pequenas */
-        margin-bottom: 2rem;
-        text-align: center;
-    }
+  .ebook-layout {
+    grid-template-columns: 1fr;
+    /* Volta para 1 coluna */
+  }
+
+  .ebook-imagem {
+    order: -1;
+    /* Imagem vem primeiro em telas pequenas */
+    margin-bottom: 2rem;
+    text-align: center;
+  }
 }
 
 /* Estilos para o Bloco 13 */
 #bloco13 {
-    padding: 60px 20px;
-    background-color: #1E1E1E; /* Fundo cinza escuro */
-    text-align: center;
+  padding: 60px 20px;
+  background-color: #1E1E1E;
+  /* Fundo cinza escuro */
+  text-align: center;
 }
 
 #bloco13 h2 {
-    color: #FFFFFF;
-    font-size: 2.2rem;
-    font-weight: bold;
-    margin-bottom: 2rem;
+  color: #FFFFFF;
+  font-size: 2.2rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
 }
 
 #bloco13 .cta-button {
-    background-color: #FFA500;
-    color: #121212;
-    padding: 15px 40px;
-    border-radius: 8px;
-    font-weight: bold;
-    font-size: 1.1rem;
-    text-decoration: none;
-    display: inline-block;
-    border: none;
-    transition: transform 0.2s ease;
+  background-color: #FFA500;
+  color: #121212;
+  padding: 15px 40px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-decoration: none;
+  display: inline-block;
+  border: none;
+  transition: transform 0.2s ease;
 }
 
 #bloco13 .cta-button:hover {
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 #bloco13 .nota-rodape {
-    margin-top: 1rem;
-    font-size: 0.9rem;
-    color: #888888; /* Cinza para a nota */
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #888888;
+  /* Cinza para a nota */
 }
 
 /* Estilos para o Bloco 14 (FAQ com Acordeão) */
 #bloco14 {
-    padding: 60px 20px;
-    background-color: #121212;
+  padding: 60px 20px;
+  background-color: #121212;
 }
 
 #bloco14 .container {
-    max-width: 800px;
-    margin: 0 auto;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 #bloco14 h2 {
-    text-align: center;
-    font-size: 2.5rem;
-    color: #FFFFFF;
-    font-weight: bold;
-    margin-bottom: 3rem;
+  text-align: center;
+  font-size: 2.5rem;
+  color: #FFFFFF;
+  font-weight: bold;
+  margin-bottom: 3rem;
 }
 
 .faq-accordion .faq-item {
-    border-bottom: 1px solid #333; /* Linha divisória */
-    margin-bottom: 1rem;
+  border-bottom: 1px solid #333;
+  /* Linha divisória */
+  margin-bottom: 1rem;
 }
 
 .faq-question {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 0;
-    cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  cursor: pointer;
 }
 
 .faq-question h3 {
-    font-size: 1.5rem;
-    color: #FFA500; /* Laranja */
-    font-weight: bold;
-    margin: 0;
+  font-size: 1.5rem;
+  color: #FFA500;
+  /* Laranja */
+  font-weight: bold;
+  margin: 0;
 }
 
 .faq-icon {
-    font-size: 2.5rem;
-    color: #FFA500;
-    transition: transform 0.3s ease;
+  font-size: 2.5rem;
+  color: #FFA500;
+  transition: transform 0.3s ease;
 }
 
 /* Gira o ícone '+' para 'x' quando aberto */
 .faq-icon.open {
-    transform: rotate(45deg);
+  transform: rotate(45deg);
 }
 
 /* --- Lógica da Animação --- */
 .faq-answer {
-    max-height: 0; /* Começa fechado */
-    overflow: hidden;
-    transition: max-height 0.5s ease-in-out;
+  max-height: 0;
+  /* Começa fechado */
+  overflow: hidden;
+  transition: max-height 0.5s ease-in-out;
 }
 
 .faq-answer.open {
-    max-height: 500px; /* Altura máxima para a animação. Ajuste se o texto for maior. */
+  max-height: 500px;
+  /* Altura máxima para a animação. Ajuste se o texto for maior. */
 }
 
 .faq-answer-content {
-    padding: 0 0 1.5rem 0; /* Espaçamento interno da resposta */
+  padding: 0 0 1.5rem 0;
+  /* Espaçamento interno da resposta */
 }
 
 .faq-answer p {
-    font-size: 1.1rem;
-    color: #CCCCCC;
-    line-height: 1.7;
-    margin-bottom: 1rem;
+  font-size: 1.1rem;
+  color: #CCCCCC;
+  line-height: 1.7;
+  margin-bottom: 1rem;
 }
+
 .faq-answer a {
-    color: #FFA500;
-    text-decoration: underline;
+  color: #FFA500;
+  text-decoration: underline;
 }
+
 .faq-answer a:hover {
-    color: #FFFFFF;
+  color: #FFFFFF;
 }
 
 /* --- PREÇO (BLOCO 7 E 11) --- */
@@ -1376,35 +1442,41 @@ table th {
 
 /* Estilos para o Rodapé (Bloco 15 e 16) */
 #bloco15 {
-    padding: 40px 20px 20px 20px;
-    background-color: #121212; /* Fundo escuro */
-    text-align: center;
+  padding: 40px 20px 20px 20px;
+  background-color: #121212;
+  /* Fundo escuro */
+  text-align: center;
 }
 
 #bloco15 p {
-    color: #888888; /* Cinza para o texto */
-    font-size: 0.9rem;
-    line-height: 1.5;
-    margin-bottom: 0.5rem;
+  color: #888888;
+  /* Cinza para o texto */
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 0.5rem;
 }
 
 #bloco16 {
-    padding: 20px;
-    background-color: #121212; /* Fundo escuro */
-    text-align: center;
-    border-top: 1px solid #333; /* Linha divisória sutil */
+  padding: 20px;
+  background-color: #121212;
+  /* Fundo escuro */
+  text-align: center;
+  border-top: 1px solid #333;
+  /* Linha divisória sutil */
 }
 
 #bloco16 a {
-    color: #FFA500; /* Laranja */
-    font-weight: bold;
-    text-decoration: none;
-    margin: 0 15px; /* Espaçamento entre os links */
-    font-size: 0.9rem;
+  color: #FFA500;
+  /* Laranja */
+  font-weight: bold;
+  text-decoration: none;
+  margin: 0 15px;
+  /* Espaçamento entre os links */
+  font-size: 0.9rem;
 }
 
 #bloco16 a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 /* --- FOOTER (BLOCO 15 e 16) --- */
@@ -1434,53 +1506,54 @@ footer p {
 
 /* Estilos para as Páginas Legais (Política de Privacidade, Termos de Uso) */
 #pagina-legal {
-    background-color: #121212;
-    padding: 60px 20px;
+  background-color: #121212;
+  padding: 60px 20px;
 }
 
 #pagina-legal .container {
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: left;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
 }
 
 #pagina-legal h2 {
-    font-size: 2.5rem;
-    color: #FFFFFF;
-    font-weight: bold;
-    margin-bottom: 1rem;
-    text-align: center;
+  font-size: 2.5rem;
+  color: #FFFFFF;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  text-align: center;
 }
 
 #pagina-legal h3 {
-    font-size: 1.5rem;
-    color: #FFA500;
-    margin-top: 2.5rem;
-    margin-bottom: 1rem;
+  font-size: 1.5rem;
+  color: #FFA500;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
 }
 
-#pagina-legal p, #pagina-legal li {
-    font-size: 1.1rem;
-    color: #CCCCCC;
-    line-height: 1.8;
-    margin-bottom: 1rem;
+#pagina-legal p,
+#pagina-legal li {
+  font-size: 1.1rem;
+  color: #CCCCCC;
+  line-height: 1.8;
+  margin-bottom: 1rem;
 }
 
 #pagina-legal ul {
-    list-style-position: inside;
+  list-style-position: inside;
 }
 
 #pagina-legal a {
-    color: #FFA500;
-    text-decoration: underline;
+  color: #FFA500;
+  text-decoration: underline;
 }
 
 #pagina-legal .texto-destaque {
-    background-color: #1E1E1E;
-    border-left: 4px solid #FFA500;
-    padding: 1rem;
-    font-weight: bold;
-    margin: 2rem 0;
+  background-color: #1E1E1E;
+  border-left: 4px solid #FFA500;
+  padding: 1rem;
+  font-weight: bold;
+  margin: 2rem 0;
 }
 
 

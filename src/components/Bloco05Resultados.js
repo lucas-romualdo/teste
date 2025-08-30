@@ -19,16 +19,19 @@ const benefitsData = [
 const Bloco05Resultados = () => {
     return (
         <section id="bloco5-e-6-combinados">
+
             <div className="container">
                 <h2>Mas o que essa imersão representa na prática para o seu dia a dia como vendedor?</h2>
                 <p>Veja os resultados concretos que você pode alcançar ao aplicar o Manual Solar Buy-Side no seu processo de venda.</p>
 
                 {/* Estrutura da Tabela de Resultados */}
                 <div className="results-grid">
+                   {/* Cabeçalho do Grid */}
                     <div className="grid-header">
-                        <div className="header-item active">O QUE VOCÊ, VENDEDOR, VAI DOMINAR</div>
-                        <div className="header-item">QUAIS SERÃO OS RESULTADOS</div>
+                        <div className="header-item">O QUE O COMPRADOR VAI DOMINAR</div>
+                        <div className="header-item">PRINCIPAIS FOCO E HABILIDADES</div>
                     </div>
+                
                     <div className="grid-body">
                         {benefitsData.map((benefit, index) => (
                             <React.Fragment key={index}>
