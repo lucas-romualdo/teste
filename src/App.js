@@ -21,4 +21,4 @@ function App() {
   );
 }
 
-export default App; // <-- Esta é a linha que provavelmente estava faltando ou incorreta.
+export default App;

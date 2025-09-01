@@ -23,15 +23,23 @@ const Bloco11OfertaFinal = () => {
                     <p className="preco-principal">R$ 597 À VISTA</p>
                     <p className="parcelas">OU 12 X R$ 61,75</p>
                     <div className="garantia">
-                        <span>GARANTIA RISCO ZERO!</span>
+                        <img src='/images/garantia.png' alt='Garantia Zero'></img>
                     </div>
-                </div>
 
-                {/* O botão pode reutilizar o estilo do Bloco 7, com um ajuste para o texto */}
-                <a href="#bloco11" className="cta-button cta-duas-linhas">
-                    <div>APROVEITE ESSA OFERTA ESPECIAL!</div>
-                    <div className="texto-menor-botao">COMPRA AGORA</div>
-                </a>
+                    <div className="payment-icons">
+                        <img src="./images/visa.png" alt="Visa" />
+                        <img src="/images/mastercard.png" alt="Mastercard" />
+                        <img src="/images/pix.svg" alt="Pix" />
+                        <img src="/images/boleto.png" alt="Boleto" />
+                        <span className="divider"></span>
+                        <img src="/images/compra-segura.png" alt="Compra Segura" />
+                    </div>
+
+                    <a href="#bloco11" className="cta-button cta-duas-linhas">
+                        <div>APROVEITE ESSA OFERTA ESPECIAL!</div>
+                        <div className="texto-menor-botao">COMPRA AGORA</div>
+                    </a>
+                </div>
             </div>
         </section>
     );

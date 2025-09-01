@@ -1,9 +1,6 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react'; // 1. Importar os hooks necessários
+import '../App.css';
 
-// CORREÇÃO 1: O CSS está um nível acima, então usamos '../'
-import '../App.css'; 
-
-// CORREÇÃO 2: Os componentes estão na mesma pasta, então usamos './'
 import Bloco01Hero from './Bloco01Hero';
 import Bloco02Video from './Bloco02Video';
 import Bloco03Publico from './Bloco03Publico';
@@ -18,9 +15,55 @@ import Bloco11OfertaFinal from './Bloco11OfertaFinal';
 import Bloco12Ebook from './Bloco12Ebook';
 import Bloco13Contato from './Bloco13Contato';
 import Bloco14Faq from './Bloco14Faq';
-// O Footer será chamado no App.js, então não precisamos dele aqui.
+import EbookPopup from './EbookPopup';
 
 const LandingPage = () => {
+  // 2. Adicionar os states para controlar o pop-up
+  const [showPopup, setShowPopup] = useState(false);
+  const [hasPopupShown, setHasPopupShown] = useState(false);
+  const bloco12Ref = useRef(null);
+
+  // 3. Adicionar a lógica dos gatilhos (scroll e intenção de saída)
+  useEffect(() => {
+    const triggerPopup = () => {
+      if (!hasPopupShown) {
+        setShowPopup(true);
+        setHasPopupShown(true);
+      }
+    };
+
+    // Lógica para Intenção de Saída
+    const handleMouseOut = (e) => {
+      if (e.clientY <= 0) {
+        triggerPopup();
+      }
+    };
+
+    // Lógica para Scroll até o Bloco 12
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0];
+        if (entry.isIntersecting) {
+          triggerPopup();
+        }
+      },
+      { threshold: 0.5 }
+    );
+
+    if (bloco12Ref.current) {
+      observer.observe(bloco12Ref.current);
+    }
+
+    document.addEventListener('mouseout', handleMouseOut);
+
+    return () => {
+      document.removeEventListener('mouseout', handleMouseOut);
+      if (bloco12Ref.current) {
+        observer.unobserve(bloco12Ref.current);
+      }
+    };
+  }, [hasPopupShown]);
+
   return (
     <>
       <Bloco01Hero />
@@ -34,9 +77,17 @@ const LandingPage = () => {
       <Bloco09Depoimentos />
       <Bloco10Autor />
       <Bloco11OfertaFinal />
-      <Bloco12Ebook />
+
+      {/* 4. Ancorar a referência no Bloco 12 */}
+      <div ref={bloco12Ref}>
+        <Bloco12Ebook />
+      </div>
+
       <Bloco13Contato />
       <Bloco14Faq />
+
+      {/* 5. Renderizar o pop-up condicionalmente */}
+      <EbookPopup show={showPopup} onClose={() => setShowPopup(false)} />
     </>
   );
 };

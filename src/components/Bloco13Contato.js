@@ -8,7 +8,6 @@ const Bloco13Contato = () => {
                 <a href="https://wa.me/554499999999" target="_blank" rel="noopener noreferrer" className="cta-button">
                     WHATSAPP: [FALAR COM UM CONSULTOR NO WHATSAPP]
                 </a>
-                <p className="nota-rodape">(Vou comprar um numero de celular para inserir)</p>
             </div>
         </section>
     );
